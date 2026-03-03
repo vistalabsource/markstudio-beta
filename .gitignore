@@ -1,6 +1,6 @@
 # Python-generated files
 __pycache__/
-*.py[oc]
+*.py[oc]beta-1.0
 build/
 dist/
 wheels/
@@ -8,3 +8,6 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Build commands
+*.ps1
