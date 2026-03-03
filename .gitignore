@@ -1,13 +1,14 @@
 # Python-generated files
 __pycache__/
-*.py[oc]beta-1.0
+*.py[oc]
 build/
 dist/
 wheels/
 *.egg-info
+bin/
 
 # Virtual environments
-.venv
+.venv/
 
 # Build commands
 *.ps1
