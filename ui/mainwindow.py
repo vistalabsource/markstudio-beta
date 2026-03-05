@@ -17,10 +17,10 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
 from PySide6.QtWebEngineWidgets import QWebEngineView
-from PySide6.QtWidgets import (QApplication, QComboBox, QHBoxLayout, QMainWindow,
-    QMenu, QMenuBar, QSizePolicy, QSpacerItem,
-    QStatusBar, QTextEdit, QToolBar, QVBoxLayout,
-    QWidget)
+from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QHBoxLayout,
+    QMainWindow, QMenu, QMenuBar, QSizePolicy,
+    QSpacerItem, QStatusBar, QTextEdit, QToolBar,
+    QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -84,6 +84,14 @@ class Ui_MainWindow(object):
         self.actionNewfile_2 = QAction(MainWindow)
         self.actionNewfile_2.setObjectName(u"actionNewfile_2")
         self.actionNewfile_2.setMenuRole(QAction.MenuRole.NoRole)
+        self.actionBasic = QAction(MainWindow)
+        self.actionBasic.setObjectName(u"actionBasic")
+        self.actionGitHub_style = QAction(MainWindow)
+        self.actionGitHub_style.setObjectName(u"actionGitHub_style")
+        self.actionLocal_CSS = QAction(MainWindow)
+        self.actionLocal_CSS.setObjectName(u"actionLocal_CSS")
+        self.actionOnline_CSS = QAction(MainWindow)
+        self.actionOnline_CSS.setObjectName(u"actionOnline_CSS")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout_3 = QVBoxLayout(self.centralwidget)
@@ -111,9 +119,15 @@ class Ui_MainWindow(object):
         self.select_style = QComboBox(self.centralwidget)
         self.select_style.addItem("")
         self.select_style.addItem("")
+        self.select_style.addItem("")
         self.select_style.setObjectName(u"select_style")
 
         self.horizontalLayout_2.addWidget(self.select_style)
+
+        self.toc_check = QCheckBox(self.centralwidget)
+        self.toc_check.setObjectName(u"toc_check")
+
+        self.horizontalLayout_2.addWidget(self.toc_check)
 
         self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
@@ -149,6 +163,8 @@ class Ui_MainWindow(object):
         self.menubar.setGeometry(QRect(0, 0, 808, 33))
         self.menu = QMenu(self.menubar)
         self.menu.setObjectName(u"menu")
+        self.menu_2 = QMenu(self.menubar)
+        self.menu_2.setObjectName(u"menu_2")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -158,6 +174,7 @@ class Ui_MainWindow(object):
         MainWindow.addToolBar(Qt.ToolBarArea.TopToolBarArea, self.toolBar)
 
         self.menubar.addAction(self.menu.menuAction())
+        self.menubar.addAction(self.menu_2.menuAction())
         self.menu.addAction(self.actionNew)
         self.menu.addAction(self.actionOpen)
         self.menu.addSeparator()
@@ -167,6 +184,11 @@ class Ui_MainWindow(object):
         self.menu.addAction(self.actionPrint)
         self.menu.addSeparator()
         self.menu.addAction(self.actionQuit)
+        self.menu_2.addAction(self.actionBasic)
+        self.menu_2.addAction(self.actionGitHub_style)
+        self.menu_2.addSeparator()
+        self.menu_2.addAction(self.actionLocal_CSS)
+        self.menu_2.addAction(self.actionOnline_CSS)
         self.toolBar.addAction(self.actionNewfile_2)
         self.toolBar.addAction(self.actionOpenfile)
         self.toolBar.addAction(self.actionSave)
@@ -206,13 +228,17 @@ class Ui_MainWindow(object):
         self.actionBCode.setText(QCoreApplication.translate("MainWindow", u"\u30b3\u30fc\u30c9\u30d6\u30ed\u30c3\u30af", None))
         self.actionLNBreak.setText(QCoreApplication.translate("MainWindow", u"\u6539\u884c", None))
         self.actionLine.setText(QCoreApplication.translate("MainWindow", u"\u6c34\u5e73\u7dda", None))
-        self.actionNew.setText(QCoreApplication.translate("MainWindow", u"New(&Ctrl+&N)", None))
-        self.actionOpen.setText(QCoreApplication.translate("MainWindow", u"Open(&Ctrl+&O)", None))
-        self.actionSave_2.setText(QCoreApplication.translate("MainWindow", u"Save(&Ctrl+&S)", None))
-        self.actionSave_as.setText(QCoreApplication.translate("MainWindow", u"Save as(&Ctrl+&Shift+&S)", None))
-        self.actionPrint.setText(QCoreApplication.translate("MainWindow", u"Print(&Ctrl+&P)", None))
-        self.actionQuit.setText(QCoreApplication.translate("MainWindow", u"Quit(&Ctrl+&Q)", None))
+        self.actionNew.setText(QCoreApplication.translate("MainWindow", u"\u65b0\u898f(&Ctrl+&N)", None))
+        self.actionOpen.setText(QCoreApplication.translate("MainWindow", u"\u958b\u304f(&Ctrl+&O)", None))
+        self.actionSave_2.setText(QCoreApplication.translate("MainWindow", u"\u4fdd\u5b58(&Ctrl+&S)", None))
+        self.actionSave_as.setText(QCoreApplication.translate("MainWindow", u"\u540d\u524d\u3092\u4ed8\u3051\u3066\u4fdd\u5b58(&Ctrl+&Shift+&S)", None))
+        self.actionPrint.setText(QCoreApplication.translate("MainWindow", u"\u5370\u5237(&Ctrl+&P)", None))
+        self.actionQuit.setText(QCoreApplication.translate("MainWindow", u"\u7d42\u4e86(&Ctrl+&Q)", None))
         self.actionNewfile_2.setText(QCoreApplication.translate("MainWindow", u"\u65b0\u898f", None))
+        self.actionBasic.setText(QCoreApplication.translate("MainWindow", u"\u30d9\u30fc\u30b7\u30c3\u30af", None))
+        self.actionGitHub_style.setText(QCoreApplication.translate("MainWindow", u"GitHub\u30b9\u30bf\u30a4\u30eb", None))
+        self.actionLocal_CSS.setText(QCoreApplication.translate("MainWindow", u"\u30ed\u30fc\u30ab\u30ebCSS", None))
+        self.actionOnline_CSS.setText(QCoreApplication.translate("MainWindow", u"\u30aa\u30f3\u30e9\u30a4\u30f3CSS", None))
         self.select_header.setItemText(0, QCoreApplication.translate("MainWindow", u"H1", None))
         self.select_header.setItemText(1, QCoreApplication.translate("MainWindow", u"H2", None))
         self.select_header.setItemText(2, QCoreApplication.translate("MainWindow", u"H3", None))
@@ -225,8 +251,11 @@ class Ui_MainWindow(object):
 
         self.select_style.setItemText(0, QCoreApplication.translate("MainWindow", u"\u30d9\u30fc\u30b7\u30c3\u30af", None))
         self.select_style.setItemText(1, QCoreApplication.translate("MainWindow", u"GitHub\u30b9\u30bf\u30a4\u30eb", None))
+        self.select_style.setItemText(2, QCoreApplication.translate("MainWindow", u"\u30e2\u30c0\u30f3", None))
 
+        self.toc_check.setText(QCoreApplication.translate("MainWindow", u"\u76ee\u6b21", None))
         self.menu.setTitle(QCoreApplication.translate("MainWindow", u"\u30d5\u30a1\u30a4\u30eb", None))
+        self.menu_2.setTitle(QCoreApplication.translate("MainWindow", u"\u30b9\u30bf\u30a4\u30eb", None))
         self.toolBar.setWindowTitle(QCoreApplication.translate("MainWindow", u"toolBar", None))
     # retranslateUi
 

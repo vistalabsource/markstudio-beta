@@ -77,6 +77,18 @@
           <string>GitHubスタイル</string>
          </property>
         </item>
+        <item>
+         <property name="text">
+          <string>モダン</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="toc_check">
+        <property name="text">
+         <string>目次</string>
+        </property>
        </widget>
       </item>
       <item>
@@ -141,7 +153,18 @@
     <addaction name="separator"/>
     <addaction name="actionQuit"/>
    </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>スタイル</string>
+    </property>
+    <addaction name="actionBasic"/>
+    <addaction name="actionGitHub_style"/>
+    <addaction name="separator"/>
+    <addaction name="actionLocal_CSS"/>
+    <addaction name="actionOnline_CSS"/>
+   </widget>
    <addaction name="menu"/>
+   <addaction name="menu_2"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QToolBar" name="toolBar">
@@ -286,32 +309,32 @@
   </action>
   <action name="actionNew">
    <property name="text">
-    <string>New(&amp;Ctrl+&amp;N)</string>
+    <string>新規(&amp;Ctrl+&amp;N)</string>
    </property>
   </action>
   <action name="actionOpen">
    <property name="text">
-    <string>Open(&amp;Ctrl+&amp;O)</string>
+    <string>開く(&amp;Ctrl+&amp;O)</string>
    </property>
   </action>
   <action name="actionSave_2">
    <property name="text">
-    <string>Save(&amp;Ctrl+&amp;S)</string>
+    <string>保存(&amp;Ctrl+&amp;S)</string>
    </property>
   </action>
   <action name="actionSave_as">
    <property name="text">
-    <string>Save as(&amp;Ctrl+&amp;Shift+&amp;S)</string>
+    <string>名前を付けて保存(&amp;Ctrl+&amp;Shift+&amp;S)</string>
    </property>
   </action>
   <action name="actionPrint">
    <property name="text">
-    <string>Print(&amp;Ctrl+&amp;P)</string>
+    <string>印刷(&amp;Ctrl+&amp;P)</string>
    </property>
   </action>
   <action name="actionQuit">
    <property name="text">
-    <string>Quit(&amp;Ctrl+&amp;Q)</string>
+    <string>終了(&amp;Ctrl+&amp;Q)</string>
    </property>
   </action>
   <action name="actionNewfile_2">
@@ -320,6 +343,26 @@
    </property>
    <property name="menuRole">
     <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionBasic">
+   <property name="text">
+    <string>ベーシック</string>
+   </property>
+  </action>
+  <action name="actionGitHub_style">
+   <property name="text">
+    <string>GitHubスタイル</string>
+   </property>
+  </action>
+  <action name="actionLocal_CSS">
+   <property name="text">
+    <string>ローカルCSS</string>
+   </property>
+  </action>
+  <action name="actionOnline_CSS">
+   <property name="text">
+    <string>オンラインCSS</string>
    </property>
   </action>
  </widget>
